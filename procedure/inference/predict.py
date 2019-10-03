@@ -64,9 +64,8 @@ def inference_batch(batch):
 
         res.extend(np.argmax(logits, axis=1).flatten())
 
-        for tweet, label, l1, l2 in list(zip(batch, res, logits.tolist()):
-            logger.debug(f'\nL1: {l1}\nL2: {l2}\nLabel: {label}\n{tweet}')
+        for tweet, label, l in list(zip(batch, res, logits.tolist())):
+            logger.debug(f'\nL: {l}\nLabel: {label}\n{tweet}')
 
     labels = [mappings[r] for r in res]
     return labels, res
-
