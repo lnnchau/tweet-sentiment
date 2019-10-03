@@ -3,3 +3,4 @@ data
 env_tweet
 __pycache__
 app.log
+.DS_Store
