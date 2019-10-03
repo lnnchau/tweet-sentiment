@@ -28,8 +28,14 @@ curl localhost:5000/analyze/<keyword>
   "positive_ratio": float,
   "processing_time: float,
   "results": [
-    "sentiment": enum["POSTITIVE", "NEGATIVE"],
-    "text": str
+    {
+      "sentiment": enum["POSTITIVE", "NEGATIVE"],
+      "text": str
+    },
+    {
+      "sentiment": enum["POSTITIVE", "NEGATIVE"],
+      "text": str
+    },
   ]
 }
 ```
