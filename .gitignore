@@ -1,0 +1,5 @@
+# store models
+data
+env_tweet
+__pycache__
+app.log
