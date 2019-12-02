@@ -2,6 +2,12 @@ from multiprocessing import Process
 from google_drive_downloader import GoogleDriveDownloader as gdd
 from pathlib import Path
 
+
+gdd.download_file_from_google_drive(
+    file_id='17_l1KgX-1yCubPYLY3Zo7CtgcB-C0DqJ',
+    dest_path='data/model/distil.pkl')
+
+
 if not Path("data/model").exists():
     processes = []
     kwargs_list = [
