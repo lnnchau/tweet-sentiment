@@ -35,7 +35,7 @@ def analyze(name):
     with Pool(cpu_count()) as p:
         input_text = list(p.imap(clean_tweet, tweets))
 
-    labels, res = inference_batch(input_text)
+    labels, res, polarity = inference_batch(input_text)
 
     res_dict = {
         "keyword": name,
@@ -43,8 +43,9 @@ def analyze(name):
         "positive_ratio": sum(res) / max(len(tweets), 1),
         "results": [{
             "text": text,
-            "sentiment": label
-        } for text, label in list(zip(tweets, labels))]
+            "sentiment": label,
+            "polarity": p
+        } for text, label, p in list(zip(tweets, labels, polarity))]
     }
     res_dict["negative_ratio"] = 1 - res_dict["positive_ratio"]
     res_dict["processing_time"] = time.time() - start
