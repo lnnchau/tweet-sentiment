@@ -33,6 +33,3 @@ def clean_tweet(text):
     logger.info(f'Raw: {text}\nCleaned: {clean_tweet}')
 
     return clean_tweet
-
-
-__all__ = ['clean_tweet']

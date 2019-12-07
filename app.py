@@ -1,6 +1,6 @@
 from flask import Flask, request
 from procedure.preprocess import clean_tweet
-from procedure.inference import inference_batch
+from procedure.predict import inference_batch
 from procedure.scrape import get_tweet
 from multiprocessing import Pool, cpu_count
 import logging

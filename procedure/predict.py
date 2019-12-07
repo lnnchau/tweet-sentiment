@@ -1,6 +1,6 @@
 import logging
-import numpy as np
 import pickle
+import numpy as np
 from scipy.special import expit as sigmoid
 
 
